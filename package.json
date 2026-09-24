@@ -1,0 +1,44 @@
+{
+  "name": "composable-context-architecture",
+  "version": "0.1.0",
+  "description": "The dynamic, fluid companion framework to Interpretable Context Methodology (ICM) for knowledge work and creative discovery",
+  "type": "module",
+  "bin": {
+    "cca": "./scripts/cca.js"
+  },
+  "scripts": {
+    "status": "node ./scripts/cca.js status",
+    "route": "node ./scripts/cca.js route",
+    "run": "node ./scripts/cca.js run",
+    "compile": "node ./scripts/cca.js compile",
+    "me": "node ./scripts/cca.js me",
+    "doctor": "node ./scripts/cca.js doctor",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "node ./tests/run_all.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richardelder2/Composable-Context-Architecture.git"
+  },
+  "keywords": [
+    "cca",
+    "icm",
+    "interpretable-context-methodology",
+    "agentic-ai",
+    "cognitive-architecture",
+    "glass-box",
+    "human-in-the-loop",
+    "creative-discovery"
+  ],
+  "author": "Richard Elder & Antigravity",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^26.5.1",
+    "typescript": "^5.8.2"
+  }
+}
