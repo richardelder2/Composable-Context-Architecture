@@ -10,6 +10,7 @@ import * as path from 'node:path';
 import { ContextMounter } from '../core/context_mounter.js';
 import { PipeBuffer } from '../core/pipe.js';
 import { MeManager } from '../core/person/me_manager.js';
+import { OkfResolver } from '../core/okf/resolver.js';
 
 const workspaceRoot = process.cwd();
 const command = process.argv[2] || 'status';
@@ -71,6 +72,24 @@ async function handleStatus() {
 
   const agPath = path.join(workspaceRoot, 'agents.md');
   console.log(`   agents.md:     ${fs.existsSync(agPath) ? 'Registered' : 'Missing'}`);
+
+  // 3. Google OKF Bundles
+  console.log('\n📚 Knowledge Bundles (Google OKF):');
+  const bundlesDir = path.join(workspaceRoot, 'bundles');
+  if (fs.existsSync(bundlesDir)) {
+    const bundleDirs = fs.readdirSync(bundlesDir).filter(f => fs.statSync(path.join(bundlesDir, f)).isDirectory());
+    if (bundleDirs.length === 0) {
+      console.log('   bundles/: Ready (No bundles currently mounted)');
+    } else {
+      const okf = new OkfResolver();
+      bundleDirs.forEach(b => {
+        const bundle = okf.loadBundle(path.join(bundlesDir, b));
+        console.log(`   - ${bundle.name} (${bundle.cards.length} OKF cards loaded)`);
+      });
+    }
+  } else {
+    console.log('   bundles/: Not created yet (Create bundles/ to mount OKF knowledge)');
+  }
 
   console.log('\n✨ System ready for fluid discovery.\n');
 }

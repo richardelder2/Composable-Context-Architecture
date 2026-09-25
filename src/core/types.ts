@@ -101,3 +101,25 @@ export interface TelemetryEvent {
   outputTokens: number;
   humanChoice: string;
 }
+
+/**
+ * Standard Google Open Knowledge Format (OKF) Data Contracts
+ */
+export interface OkfCard {
+  id: string;
+  title: string;
+  type: string;
+  tags: string[];
+  description?: string;
+  content: string;
+  filePath: string;
+  tokenEstimate: number;
+  metadata?: Record<string, string>;
+}
+
+export interface OkfBundle {
+  id: string;
+  name: string;
+  path: string;
+  cards: OkfCard[];
+}

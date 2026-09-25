@@ -25,3 +25,10 @@ This registry configures agent models, execution constraints, and harness routes
 - `/tether` — Logic & continuity falsification (Type: δ)
 - `/blast` — Boundary mapping & pre-mortem stress testing (Type: δ)
 - `write-me` — Person calibration interview (Type: β)
+
+## 4. Mounted Knowledge Bundles (Google OKF)
+<!--
+  Declare paths to Google Open Knowledge Format (OKF) bundle directories here.
+  CCA mounts matching OKF cards as domain anchors directly into context.md.
+-->
+- path: ./bundles/
