@@ -226,12 +226,18 @@ async function main() {
     case 'run':
       console.log('\n⚡ `cca run` will interactively step through dynamic blocks (coming in Phase 3).\n');
       break;
+    case 'debrief': {
+      const { debriefSessionBlock } = await import('../blocks/debrief.js');
+      const res = await debriefSessionBlock.run('');
+      console.log('\n' + res.yieldText);
+      break;
+    }
     case 'compile':
       console.log('\n📦 `cca compile` will translate stabilized micro-commits into ICM stages (coming in Phase 6).\n');
       break;
     default:
       console.log(`\nUnknown command: ${command}`);
-      console.log('Available commands: status, doctor, me, route, run, compile\n');
+      console.log('Available commands: status, doctor, me, debrief, route, run, compile\n');
   }
 }
 

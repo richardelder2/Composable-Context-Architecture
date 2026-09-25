@@ -66,3 +66,15 @@ The human will select or edit the bracket. You never make the choice yourself.
 ## 5. Engineering Standards
 * **Zero Runtime Dependencies:** Do not install or import external npm packages. Use native Node.js standard libraries (`node:fs`, `node:path`, `node:child_process`, `node:crypto`).
 * **Cross-Platform:** Normalize all paths using POSIX forward slashes and `node:path`. Support macOS, Linux, and Windows.
+
+---
+
+## 6. Epistemic Transparency (Explain the "Why" in Plain Language)
+
+AI must actively reinforce and train critical thinking, never atrophy it. 
+Whenever you invoke a cognitive block, propose a dynamic run, or frame bracketed options, include a **single, punchy 1-line rationale** in plain, everyday English explaining the practical value of the move:
+* `> Why this move: Inversion. Instead of guessing what works, we find what breaks it first.`
+* `> Why this move: Ruthless Elimination. Killing bad options early protects your mental focus.`
+* `> Why this move: First Principles. Stripping away buzzwords to see the actual causal parts.`
+
+Never use academic jargon or high-flown rhetoric. State the practical cognitive reason plainly.

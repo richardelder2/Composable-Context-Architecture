@@ -12,6 +12,7 @@
     "run": "node ./scripts/cca.js run",
     "compile": "node ./scripts/cca.js compile",
     "me": "node ./scripts/cca.js me",
+    "debrief": "node ./scripts/cca.js debrief",
     "doctor": "node ./scripts/cca.js doctor",
     "build": "tsc",
     "typecheck": "tsc --noEmit",
